@@ -5,21 +5,15 @@ import {
     Image,
     Container
 } from 'react-bootstrap';
-import creditCardImage from "../assets/credit-card.jpg";
 import './CreditCard.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
+import IconText from './IconText';
+import creditCardImage from "../assets/credit-card.jpg";
 import { 
-    fas, 
     faCreditCard, 
     faShoppingCart, 
     faMobile,
     faWallet
 } from '@fortawesome/free-solid-svg-icons';
-
-
-library.add(fab, fas, faCreditCard, faShoppingCart, faMobile, faWallet)
 
 
 const CreditCard = () => (
@@ -31,45 +25,24 @@ const CreditCard = () => (
                     </Row>
                     <Row>
                         <Col xs={12} lg={6} className='mb-4'>
-                            <Row>
-                                <Col xs={2} className='d-flex justify-content-center'>
-                                    <FontAwesomeIcon icon={faCreditCard} size='2x' color='#f05656' />
-                                </Col>
-                                <Col xs={10} className='h5 text-muted'>
-                                    Crédito Pessoal
-                                </Col>
-                            </Row>
+                            <IconText icon={faCreditCard} size={2} color='#f05656' textClass='h5 text-muted'>
+                                Crédito Pessoal
+                            </IconText>
                         </Col>
                         <Col xs={12} lg={6} className='mb-4'>
-                            <Row>
-                                <Col xs={2} className='d-flex justify-content-center'>
-                                    <FontAwesomeIcon icon={faMobile} size='2x' color='#f05656' />
-                                
-                                </Col>
-                                <Col xs={10} className='h5 text-muted'>
-                                    App
-                                </Col>
-                            </Row>
+                            <IconText icon={faMobile} size={2} color='#f05656' textClass='h5 text-muted'>
+                                App
+                            </IconText>
                         </Col>
                         <Col xs={12} lg={6} className='mb-4'>
-                            <Row>
-                                <Col xs={2} className='d-flex justify-content-center'>
-                                    <FontAwesomeIcon icon={faShoppingCart} size='2x' color='#f05656' />
-                                </Col>
-                                <Col xs={10} className='h5 text-muted'>
-                                    Pagamentos Online
-                                </Col>
-                            </Row>
+                            <IconText icon={faShoppingCart} size={2} color='#f05656' textClass='h5 text-muted'>
+                                Pagamentos Online
+                            </IconText>
                         </Col>
                         <Col xs={12} lg={6} className='mb-4'>
-                            <Row>
-                                <Col xs={2} className='d-flex justify-content-center'>
-                                    <FontAwesomeIcon icon={faWallet} size='2x' color='#f05656' />
-                                </Col>
-                                <Col xs={10} className='h5 text-muted'>
-                                    Carteira Digital
-                                </Col>
-                            </Row>
+                            <IconText icon={faWallet} size={2} color='#f05656' textClass='h5 text-muted'>
+                                Carteira Digital
+                            </IconText>
                         </Col>
                     </Row>
                 </Col>
