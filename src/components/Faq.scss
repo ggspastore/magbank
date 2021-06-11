@@ -1,0 +1,18 @@
+@import '../variables';
+
+.faq {
+    background-color: $color-faq-background;
+
+    &-clickable {
+        cursor: pointer;
+    }
+
+    div.card {
+        background-color: unset;
+        background-color: $color-faq-background;
+    
+        .card-header {
+            background-color: $color-faq-header;
+        }
+    }
+}

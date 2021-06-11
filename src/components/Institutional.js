@@ -36,7 +36,7 @@ const Institutional = () => (
                             Transações mais seguras
                         </IconText>
                     </Col>
-                    <Button variant='outline-light'>Abra sua conta</Button>
+                    <Button variant='outline-light' className=''>Abra sua conta</Button>
                 </Col> 
             </Row>
         </ Container>
