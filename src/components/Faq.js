@@ -31,9 +31,7 @@ const Faq = () => {
         setIndex(key);
     }
 
-    useEffect(() => {
-        console.log(index);
-    }, [index])
+    useEffect(() => [index])
  
     return (
         <section className='faq text-light'>
@@ -65,10 +63,12 @@ const Faq = () => {
                             <IconText 
                                 icon={icon} 
                                 size={3} 
-                                color={key === index ? '#FFF' : '#BBB'} 
+                                color={key === index ? '#FFF' : '#BBB'}
+                                textColor={key === index ? '#FFF' : '#BBB'}
                                 iconClass={'faq-clickable'} 
                                 textClass={'lead faq-clickable'} 
-                                onClick={() => handleClick(key)} key={key}>{text}
+                                onClick={() => handleClick(key)} key={key}
+                            >{text}
                             </IconText>
                         ))}
                     </Col>

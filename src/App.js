@@ -6,6 +6,7 @@ import BlogCards from './components/BlogCards';
 import CenteredButton from './components/CenteredButton';
 import Institutional from './components/Institutional';
 import Faq from './components/Faq';
+import Footer from './components/Footer';
 
 import "./App.scss";
 
@@ -21,6 +22,7 @@ const App = () => (
       <CenteredButton>Abra sua conta</CenteredButton>
       <Institutional />
       <Faq />
+      <Footer />
     </div>
   );
 
