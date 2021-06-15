@@ -12,9 +12,9 @@ import {
 import "./Navbar.scss";
 import logo from "../assets/logo.svg";
 
-const Navigation = () => (
+const Navigation = ({ handleCreateAcc }) => (
   <Navbar variant="dark" expand="lg">
-    <Container>
+    <Container className="d-flex justify-content-lg-evenly">
       <Navbar.Brand href="#home">
         <img
           src={logo}
@@ -23,14 +23,17 @@ const Navigation = () => (
           alt="Magbank logo"
         />
       </Navbar.Brand>
+
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+
+      <Navbar.Collapse id="basic-navbar-nav d-flex justify-content-lg-evenly">
         <Nav className="mr-auto">
           <Nav.Link href="#cartao">Cartão</Nav.Link>
           <Nav.Link href="#quem-somos">Quem Somos</Nav.Link>
           <Nav.Link href="#faq">FAQ</Nav.Link>
         </Nav>
-        <ButtonGroup aria-label="Basic example">
+
+        <ButtonGroup aria-label="Basic example d-flex">
           <DropdownButton
             variant="outline-light"
             as={ButtonGroup}
@@ -62,7 +65,9 @@ const Navigation = () => (
               </Form>
             </Dropdown.Item>
           </DropdownButton>
-          <Button variant="outline-light">abra sua conta</Button>
+          <Button variant="outline-light" onClick={handleCreateAcc}>
+            abra sua conta
+          </Button>
         </ButtonGroup>
       </Navbar.Collapse>
     </Container>

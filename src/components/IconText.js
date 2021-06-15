@@ -8,7 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const IconText = (
     { icon, 
     size = '1', 
-    color = '#000', 
+    color = '#000',
+    textColor = '', 
     textClass = '',
     iconClass = '', 
     rowClass = '',
@@ -19,7 +20,7 @@ const IconText = (
             <Col xs={size} className='d-flex justify-content-center'>
                 <FontAwesomeIcon icon={icon} size={`${size}x`} color={color} className={iconClass} />
             </Col>
-            <Col xs={12 - size} className={textClass}>
+            <Col xs={12 - size} className={textClass} color={textColor}>
                 {children}
             </Col>
         </Row>

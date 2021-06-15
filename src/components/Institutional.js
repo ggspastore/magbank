@@ -14,7 +14,7 @@ import {
     faShieldAlt
 } from '@fortawesome/free-solid-svg-icons';
 
-const Institutional = () => (
+const Institutional = ({ onClick }) => (
     <section className='institutional-background text-light'>
         <Container className='py-5' >
             <Row>
@@ -36,7 +36,7 @@ const Institutional = () => (
                             Transações mais seguras
                         </IconText>
                     </Col>
-                    <Button variant='outline-light' className=''>Abra sua conta</Button>
+                    <Button variant='outline-light' onClick={onClick}>Abra sua conta</Button>
                 </Col> 
             </Row>
         </ Container>
