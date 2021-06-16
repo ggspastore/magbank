@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import {
   Container,
   Navbar,
@@ -6,72 +7,49 @@ import {
   ButtonGroup,
   Button,
   DropdownButton,
-  Dropdown,
-  Form,
+  Dropdown
 } from "react-bootstrap";
 import "./Navbar.scss";
 import logo from "../assets/logo.svg";
 
 const Navigation = ({ handleCreateAcc }) => (
-  <Navbar variant="dark" expand="lg">
-    <Container className="d-flex justify-content-lg-evenly">
-      <Navbar.Brand href="#home">
+  
+  <Navbar expand="lg">
+  <Container>
+    <Navbar.Brand>        
+      <Link to='/' exact>
         <img
-          src={logo}
-          height="30"
-          className="d-inline-block align-top"
-          alt="Magbank logo"
+        src={logo}
+        height="30"
+        className="d-inline-block align-top"
+        alt="Magbank logo"
         />
-      </Navbar.Brand>
+      </Link>
+    </Navbar.Brand>
 
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-      <Navbar.Collapse id="basic-navbar-nav d-flex justify-content-lg-evenly">
-        <Nav className="mr-auto">
-          <Nav.Link href="#cartao">Cartão</Nav.Link>
-          <Nav.Link href="#quem-somos">Quem Somos</Nav.Link>
-          <Nav.Link href="#faq">FAQ</Nav.Link>
-        </Nav>
+    <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className='nav__margin'>
+            <Nav.Link href="#cartao" className='text-light'>Cartão</Nav.Link>
+            <Nav.Link href="#quem-somos" className='text-light'>Quem Somos</Nav.Link>
+            <Nav.Link href="#faq" className='text-light'>FAQ</Nav.Link>
+          </Nav>
 
-        <ButtonGroup aria-label="Basic example d-flex">
-          <DropdownButton
-            variant="outline-light"
-            as={ButtonGroup}
-            title="acessar minha conta"
-            id="bg-nested-dropdown"
-          >
-            <Dropdown.Item eventKey="1">
-              <Form>
-                <Form.Group controlId="formBasicEmail">
-                  <Form.Label>Email address</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" />
-                  <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                  </Form.Text>
-                </Form.Group>
+          <ButtonGroup aria-label="Basic example" className='nav__margin'>
+            <DropdownButton id="dropdown-basic-button" variant="outline-light" title="Acessar minha conta">
+              <Dropdown.Item><Link to='/login'>Pessoa Física</Link></Dropdown.Item>
+              <Dropdown.Item><Link to='/login'>Pessoa Jurídica</Link></Dropdown.Item>
+            </DropdownButton>
+            <Button variant="outline-light" onClick={handleCreateAcc}>
+              abra sua conta
+            </Button>
+          </ButtonGroup>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
 
-                <Form.Group controlId="formBasicPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" placeholder="Password" />
-                </Form.Group>
 
-                <Form.Group controlId="formBasicCheckbox">
-                  <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-
-                <Button variant="primary" type="submit">
-                  Submit
-                </Button>
-              </Form>
-            </Dropdown.Item>
-          </DropdownButton>
-          <Button variant="outline-light" onClick={handleCreateAcc}>
-            abra sua conta
-          </Button>
-        </ButtonGroup>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
 );
 
 export default Navigation;

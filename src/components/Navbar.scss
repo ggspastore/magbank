@@ -3,4 +3,9 @@
 .navbar {
     background-color: $color-primary;
     border-bottom: 0.25rem solid $color-secondary;
+
+    & .nav__margin {
+        margin-left: auto;
+    }
 }
+

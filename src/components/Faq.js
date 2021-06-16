@@ -43,7 +43,7 @@ const Faq = () => {
                     <Col className='d-lg-none mb-3' xs={12}>
                         <Row>
                             {options.map(({ icon }, key) => (
-                                <Col className='d-flex align-items-center justify-items-center' key={key} >
+                                <Col className='d-flex align-items-center justify-content-center' key={key} >
                                     <FontAwesomeIcon 
                                         icon={icon} 
                                         className='faq-clickable' 
@@ -62,10 +62,10 @@ const Faq = () => {
                         {options.map(({ icon, text}, key) => (
                             <IconText 
                                 icon={icon} 
-                                size={3} 
+                                size={2} 
                                 color={key === index ? '#FFF' : '#BBB'}
                                 textColor={key === index ? '#FFF' : '#BBB'}
-                                iconClass={'faq-clickable'} 
+                                iconClass={'faq-clickable mb-4'} 
                                 textClass={'lead faq-clickable'} 
                                 onClick={() => handleClick(key)} key={key}
                             >{text}
