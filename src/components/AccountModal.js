@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { 
     Modal,
     Form,
@@ -7,7 +8,17 @@ import {
 
 import './AccountModal.scss';
 
-const AccountModal = ({ show, handleClose }) => (
+const AccountModal = ({ show, handleClose, auth }) => {
+    
+    const history = useHistory();
+    const [ name, setName] = useState();
+
+    const handleSubmit = () => {
+        auth.login(name, '12345', history.push('/dashboard'));
+        handleClose();
+    }
+    
+    return (
     <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
             <Modal.Title>Abra sua conta</Modal.Title>
@@ -16,7 +27,7 @@ const AccountModal = ({ show, handleClose }) => (
             <Form>
                 <Form.Group controlId="formBasicName">
                   <Form.Label>Seu nome</Form.Label>
-                  <Form.Control type="text" placeholder="Nome completo" />
+                  <Form.Control type="text" placeholder="Nome completo" value={name} onChange={(e) => setName(e.currentTarget.value)} />
                 </Form.Group>
 
                 <Form.Group controlId="formBasicEmail">
@@ -42,15 +53,15 @@ const AccountModal = ({ show, handleClose }) => (
             
         </Modal.Body>
         <Modal.Footer>
-            <Button variant="secondary" type="submit">
+            <Button variant="secondary" type="submit" onClick={handleClose}>
                 Cancelar
             </Button>
 
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" onClick={handleSubmit}>
                 Criar conta
             </Button>
         </Modal.Footer>
     </Modal>
-);
+)};
 
 export default AccountModal;

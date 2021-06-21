@@ -20,7 +20,7 @@ import AccountHistory from "../components/AccountHistory";
 import './Dashboard.scss';
 
 
-const Dashboard = () => {
+const Dashboard = ({ name, account }) => {
 
     const [ activeLink, setActiveLink ] = useState(0);
 
@@ -70,8 +70,8 @@ const Dashboard = () => {
                             </span> 
                         </Col>
                         <Col xs={9}>
-                            <h2>User's Name</h2>
-                            <p className='text-muted'> ag: 1234 c/c: 4321-5 </p>
+                            <h2>{name}</h2>
+                            <p className='text-muted'> ag: 1234 c/c: {account} </p>
                         </Col>
                     </Row>
                     <Row xs={12} className='mx-xm-2 mx-0'>
